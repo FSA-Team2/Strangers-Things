@@ -5,8 +5,8 @@ import Authenticate from "./components/Authenticate";
 import SignUpForm from "./components/NewUserSignUp";
 import Navbar from "./components/NavBar";
 import RoutePaths from "./components/RoutesPaths";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import { Home } from "./components/HomePage";
+
+
 
 function App() {
   const [token, setToken] = useState(null);
@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <div id="conatiner">
-        <Home />
+        
         <RoutePaths />
         <Navbar />
         <SignUpForm token={token} setToken={setToken} />
