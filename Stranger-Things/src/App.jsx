@@ -13,8 +13,7 @@ function App() {
 
   return (
     <>
-      <div id="conatiner">
-        
+      <div id="container">
         <RoutePaths />
         <Navbar />
         <SignUpForm token={token} setToken={setToken} />
