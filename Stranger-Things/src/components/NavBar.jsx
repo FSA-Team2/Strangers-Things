@@ -27,7 +27,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      <h1>Welcome Home</h1>
+      
     </div>
   );
 };
