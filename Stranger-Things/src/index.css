@@ -126,6 +126,15 @@ div#main-section {
   align-items: center;
 }
 
+div.posts {
+  background-color: deepskyblue;
+  margin: 5px;
+}
+
+div#eachPost {
+border: solid 2px black;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

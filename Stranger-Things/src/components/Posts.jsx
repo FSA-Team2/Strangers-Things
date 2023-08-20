@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchPosts } from "../API-Source/API";
+import { Link } from "react-router-dom";
 
 export default function Posts() {
   const [userPosts, setUserPosts] = useState([]);
@@ -23,7 +24,7 @@ export default function Posts() {
       <h1>Posts</h1>
       <div>
         {userPosts.map((post) => (
-          <div key={post._id}>
+          <div key={post._id} id="eachPost">
             <p>Title: {post.title}</p>
             <p>Description: {post.description}</p>
             <p>Price: {post.price}</p>
@@ -32,16 +33,21 @@ export default function Posts() {
           </div>
        
         ))}
+        <Link to="/" className="returnButton">
+        
+      
+        <button
+        className="goBack"
+        onClick={() => history.push("/")} 
+      >
+        Return
+      </button>
+      </Link>
       </div>
-      <button
-          className="goBack"
-          onClick={() => Posts(null)}
-        >
-          Return
-        </button>
-    </div>
+      </div>
+  );
+        }
+
   
 
-  );
 
-}
