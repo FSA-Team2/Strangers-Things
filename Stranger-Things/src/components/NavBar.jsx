@@ -4,6 +4,7 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <nav id="navlinks">
+      
         <ul style={{ listStyle: "none", padding: 5 }}>
           <li id="homeLink">
             <Link to="/" className="homeLink">
@@ -27,7 +28,6 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      
     </div>
   );
 };

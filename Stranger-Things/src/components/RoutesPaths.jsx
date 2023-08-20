@@ -3,6 +3,7 @@ import Home from "./HomePage";
 import Posts from "./Posts";
 import Profile from "./Profile";
 import Login from "./Login";
+import Navbar from "./NavBar";
 
 const RoutePaths = () => {
   return (
@@ -12,6 +13,7 @@ const RoutePaths = () => {
         <Route path="/posts" element={<Posts />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/navbar" element={<Navbar />} />
       </Routes>
     </div>
   );

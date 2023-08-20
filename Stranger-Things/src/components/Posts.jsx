@@ -26,9 +26,22 @@ export default function Posts() {
           <div key={post._id}>
             <p>Title: {post.title}</p>
             <p>Description: {post.description}</p>
+            <p>Price: {post.price}</p>
+            <p>Location: {post.location}</p>
+            <p>Will Deliver: {post.willDeliver ? "Yes" : "No"}</p>
           </div>
+       
         ))}
       </div>
+      <button
+          className="goBack"
+          onClick={() => Posts(null)}
+        >
+          Return
+        </button>
     </div>
+  
+
   );
+
 }
