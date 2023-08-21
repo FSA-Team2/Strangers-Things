@@ -1,42 +1,17 @@
-import { useState, useEffect } from 'react';
-import { fetchPosts } from "../API-Source/API";
 
 
+import Navbar from "./NavBar";
 export const Home = () => {
-    const [userPosts, setUserPosts] = useState([]);
-    
-    useEffect(() => {
-        async function fetchPostsData() {
-          try {
-            const responseData = await fetchPosts();
-            if (responseData.success) {
-              setUserPosts(responseData.data.posts);
-            }
-          } catch (error) {
-            console.error('Cannot display posts', error);
-          }
-        }
-        fetchPostsData();
-      }, []);
-    
-      return (
-        <div className="home">
-          <h1>Welcome Home</h1>
-          <div>
-            {/* Render the user posts */}
-            {userPosts.map((post) => (
-              <div key={post._id}>
-                <p>Title: {post.title}</p>
-                <p>Description: {post.description}</p>
-                <p>Price: {post.price}</p>
-                <p>Location: {post.location}</p>
-                <p>Will Deliver: {post.willDeliver ? 'Yes' : 'No'}</p>
-                {/* Other properties can be displayed similarly */}
-              </div>
-            ))}
-          </div>
-        </div>
-      );
-    };
-    
-  export default Home;
+  return (
+    <div className="home">
+      <Navbar />
+        <div>
+      <h1>Welcome to MCJ Connections!</h1>
+      </div>
+    </div>
+  );
+};
+
+
+export default Home;
+

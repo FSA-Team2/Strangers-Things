@@ -1,7 +1,5 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Authenticate from "./Authenticate";
-import FetchPosts from "../API-Source/API";
 
 const COHORT_NAME = '2302-ACC-PT-WEB-PT-A';
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
