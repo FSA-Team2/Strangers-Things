@@ -4,8 +4,7 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <nav id="navlinks">
-      
-        <ul style={{ listStyle: "none", padding: 5 }}>
+        <ul id="navUl" style={{ listStyle: "none", padding: 5 }}>
           <li id="homeLink">
             <Link to="/" className="homeLink">
               Home
@@ -24,6 +23,12 @@ const Navbar = () => {
           <li id="loginLink">
             <Link to="/login" className="loginLink">
               Login
+            </Link>
+          </li>
+          <li id="registerLink">
+            <Link to="/register" className="registerLink">
+            
+              Register
             </Link>
           </li>
         </ul>

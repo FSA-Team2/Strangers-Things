@@ -9,7 +9,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <App>
         <Routes>
-          <Route></Route>
+          <Route>
+          </Route>
         </Routes>
       </App>
     </BrowserRouter>

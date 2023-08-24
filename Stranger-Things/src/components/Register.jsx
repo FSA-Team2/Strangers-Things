@@ -4,47 +4,59 @@ import { Link, useNavigate } from "react-router-dom";
 
 const COHORT_NAME = "2302-ACC-PT-WEB-PT-A";
 const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
-export default function Login({ setToken }) {
-  const [username, setUsername] = useState(""); 
-  const [password, setPassword] = useState(""); 
+
+export default function SignUpForm({ setToken }) {
+  
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  
   const navigate = useNavigate();
-  
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${BASE_URL}/users/login`, {
+      const response = await fetch(`${BASE_URL}/users/register`, {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json'
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
+        body: JSON.stringify({ 
           user: {
-            username,
-            password 
-            }
-        }) 
+          username, password 
+          }
+        })
+        
+
+        
       });
+
       const result = await response.json();
-      
+      console.log(result);
       if (response.ok) {
         setToken(result.data.token);
-        navigate("/profile");
+        navigate("/login"); // Navigate to the desired page after successful registration
       } else {
         setError(result.error.message);
       }
     } catch (error) {
-      console.error(error);
-    }
+      setError("Error registering user."); // Set a generic error message for simplicity
+      console.error("Error registering user:", error);
+    } 
   }
-        
+
+
+  //     setToken(result.data.token);
+  //   } catch (error) {
+  //     setError(error.message);
+  //   } 
+  // }
+  // setToken();
 
   return (
- <>
-      <div id="login">
-        <h2>Login</h2>
+    <>
+      <div id="signUp">
+        <h2>Sign Up!</h2>
         {error && <p>{error}</p>}
         <form onSubmit={handleSubmit}>
           <label>
@@ -67,7 +79,7 @@ export default function Login({ setToken }) {
           <button type="submit">Submit</button>
         </form>
         <Link to="/" className="returnButton">
-          <button className="goBack" onClick={() => navigate("/profile")}>
+          <button className="goBack" onClick={() => navigate("/login")}>
             Return
           </button>
         </Link>
@@ -79,6 +91,6 @@ export default function Login({ setToken }) {
   );
   
 }
-Login.propTypes = {
+SignUpForm.propTypes = {
   setToken: PropTypes.func.isRequired,
 };
