@@ -106,6 +106,7 @@ li {
   align-items: center;
   padding: 5px;
   border: solid 2px wheat;
+  margin: 5px;
 }
 
 #container {
@@ -124,6 +125,18 @@ div#main-section {
   align-content: center;
   justify-content: center;
   align-items: center;
+}
+
+ul#navUl {
+  list-style: none;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
 }
 
 div.posts {

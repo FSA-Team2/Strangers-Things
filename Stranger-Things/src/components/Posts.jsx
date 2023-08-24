@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { fetchPosts } from "../API-Source/API";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Posts() {
   const [userPosts, setUserPosts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchPostsData() {
@@ -38,7 +39,7 @@ export default function Posts() {
       
         <button
         className="goBack"
-        onClick={() => history.push("/")} 
+        onClick={() => navigate("/")} 
       >
         Return
       </button>
