@@ -1,0 +1,35 @@
+/* Profile.css */
+
+.profile {
+    margin: 20px;
+  }
+  
+  .profile h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .profile .error {
+    color: red;
+  }
+  
+  .profile .user-info {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+  }
+  
+  .profile .user-info p {
+    margin: 5px 0;
+  }
+  
+  .profile .navbar {
+    margin-top: 20px;
+  }

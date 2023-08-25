@@ -1,17 +1,32 @@
+//HomePage.jsx
 
-
+import React from "react";
 import Navbar from "./NavBar";
-export const Home = () => {
+import { useNavigate } from "react-router-dom";
+import "./HomePage.css";
+
+const Home = ({ token, setToken }) => {
+  const navigate = useNavigate();
+
+  const handleLogOut = () => {
+    setToken(null);
+    navigate("/login");
+  };
+
   return (
     <div className="home">
-      <Navbar />
-        <div>
-      <h1>Welcome to MCJ Connections!</h1>
+      <Navbar token={token} handleLogOut={handleLogOut} />
+      <div>
+        <button onClick={handleLogOut}>Log Out</button>
+        
+        {/* Updated content */}
+        <h1>Welcome to Our Message Board</h1>
+        <p>Engage in discussions, share ideas, and connect with others.</p>
+        <p>Discover a diverse range of topics and perspectives.</p>
+        <p>Join the conversation and start connecting!</p>
       </div>
     </div>
   );
 };
 
-
 export default Home;
-

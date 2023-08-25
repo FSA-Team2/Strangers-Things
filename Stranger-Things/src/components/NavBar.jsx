@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+//NavBar.jsx
 
-const Navbar = () => {
+import { Link } from "react-router-dom";
+import "./NavBar.css";
+
+const Navbar = ({ token, handleLogOut }) => {
   return (
     <div id="navbar">
       <nav id="navlinks">
@@ -15,22 +18,31 @@ const Navbar = () => {
               Posts
             </Link>
           </li>
-          <li id="profileLink">
-            <Link to="/profile" className="profileLink">
-              Profile
-            </Link>
-          </li>
-          <li id="loginLink">
-            <Link to="/login" className="loginLink">
-              Login
-            </Link>
-          </li>
-          <li id="registerLink">
-            <Link to="/register" className="registerLink">
-            
-              Register
-            </Link>
-          </li>
+          {token ? (
+            <>
+              <li id="profileLink">
+                <Link to="/profile" className="profileLink">
+                  Profile
+                </Link>
+              </li>
+              <li>
+                <button onClick={handleLogOut}>Log Out</button>
+              </li>
+            </>
+          ) : (
+            <>
+              <li id="loginLink">
+                <Link to="/login" className="loginLink">
+                  Login
+                </Link>
+              </li>
+              <li id="registerLink">
+                <Link to="/register" className="registerLink">
+                  Register
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </nav>
     </div>
