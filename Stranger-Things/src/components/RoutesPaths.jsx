@@ -1,6 +1,6 @@
 //RoutesPath.jsx
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom"; 
 import Home from "./HomePage";
 import Posts from "./Posts";
@@ -10,7 +10,7 @@ import Navbar from "./NavBar";
 import SignUpForm from "./Register";
 import Authenticate from "./Authenticate";
 import CreatePost from "./CreatePost";
-import "./RoutesPaths.css";
+import "./Styles-Components/RoutesPaths.css";
 
 const RoutePaths = () => {
   const [token, setToken] = useState(null);

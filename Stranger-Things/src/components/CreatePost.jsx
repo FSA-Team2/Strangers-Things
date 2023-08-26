@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { createNewPost } from "../API-Source/API"; 
 import { useNavigate } from "react-router-dom";
+import "./Styles-Components/CreatePost.css";
 
 export default function CreatePost({ token }) {
   const navigate = useNavigate();

@@ -1,3 +1,11 @@
 {
-    "files.autoSave": "afterDelay"
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.defaultProfile.linux": "",
+    "launch": {
+
+
+        "configurations": [],
+        "compounds": []
+    },
+    "terminal.integrated.defaultProfile.windows": "Ubuntu (WSL)"
 }

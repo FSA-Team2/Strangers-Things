@@ -1,7 +1,8 @@
 {
   "name": "stranger-things",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "dev": "vite",

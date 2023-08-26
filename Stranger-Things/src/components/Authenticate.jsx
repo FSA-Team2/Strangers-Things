@@ -1,8 +1,8 @@
 //Authenticate.jsx
 
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
-import "./Authenticate.css";
+import "./Styles-Components/Authenticate.css";
 
 export default function Authenticate({ token }) {
   const [successMessage, setSuccessMessage] = useState(null);

@@ -1,10 +1,10 @@
 //Profile.jsx
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
-import "./Profile.css";
+import "./Styles-Components/Profile.css";
 
 export default function Profile({ token }) {
   const navigate = useNavigate();

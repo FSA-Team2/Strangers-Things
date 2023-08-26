@@ -1,9 +1,7 @@
 //HomePage.jsx
-
-import React from "react";
 import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
-import "./HomePage.css";
+import "./Styles-Components/HomePage.css";
 
 const Home = ({ token, setToken }) => {
   const navigate = useNavigate();
