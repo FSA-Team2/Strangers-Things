@@ -1,5 +1,5 @@
 //Profile.jsx
-
+import PropTypes from "eslint-plugin-react/lib/rules/prop-types";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
@@ -57,3 +57,6 @@ export default function Profile({ token }) {
     </div>
   );
 }
+Profile.propTypes = {
+  token: PropTypes.string.isRequired,
+};

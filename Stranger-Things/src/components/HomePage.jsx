@@ -1,4 +1,5 @@
 //HomePage.jsx
+import PropTypes from "eslint-plugin-react/lib/rules/prop-types";
 import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
 import "./Styles-Components/HomePage.css";
@@ -25,6 +26,10 @@ const Home = ({ token, setToken }) => {
       </div>
     </div>
   );
+};
+Home.propTypes = {
+  setToken: PropTypes.func.isRequired,
+  token: PropTypes.string.isRequired,
 };
 
 export default Home;
