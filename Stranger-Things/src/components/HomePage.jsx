@@ -1,8 +1,8 @@
 //HomePage.jsx
-import PropTypes from "eslint-plugin-react/lib/rules/prop-types";
+import PropTypes from "prop-types";
 import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
-import "./Styles-Components/HomePage.css";
+import "./HomePage.css";
 
 const Home = ({ token, setToken }) => {
   const navigate = useNavigate();

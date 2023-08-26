@@ -1,10 +1,10 @@
 //Profile.jsx
-import PropTypes from "eslint-plugin-react/lib/rules/prop-types";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
-import "./Styles-Components/Profile.css";
+import "./Profile.css";
 
 export default function Profile({ token }) {
   const navigate = useNavigate();

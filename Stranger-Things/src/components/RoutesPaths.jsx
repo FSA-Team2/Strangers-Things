@@ -10,7 +10,7 @@ import Navbar from "./NavBar";
 import SignUpForm from "./Register";
 import Authenticate from "./Authenticate";
 import CreatePost from "./CreatePost";
-import "./Styles-Components/RoutesPaths.css";
+import "./RoutesPaths.css";
 
 const RoutePaths = () => {
   const [token, setToken] = useState(null);

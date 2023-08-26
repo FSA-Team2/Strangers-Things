@@ -1,7 +1,7 @@
 //NavBar.jsx
-import PropTypes from "eslint-plugin-react/lib/rules/prop-types";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./Styles-Components/NavBar.css";
+import "./NavBar.css";
 
 const Navbar = ({ token, handleLogOut }) => {
   return (

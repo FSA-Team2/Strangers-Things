@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import PropTypes from "prop-types";
-import "./Styles-Components/Authenticate.css";
+import "./Authenticate.css";
 
 export default function Authenticate({ token }) {
   const [successMessage, setSuccessMessage] = useState(null);
