@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { fetchPosts } from "../API-Source/API";
 import { Link, useNavigate } from "react-router-dom";
-import "./Posts.css";
+import "./Styles-Components/Posts.css";
 
 export default function Posts() {
   const [userPosts, setUserPosts] = useState([]);
