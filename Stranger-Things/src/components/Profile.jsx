@@ -5,6 +5,7 @@ import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
 import "./Profile.css";
+import Logout from "./Logout";
 
 export default function Profile({ token }) {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ export default function Profile({ token }) {
     <div className="profile">
       <h1>Profile</h1>
       <Navbar token={token} username={userData?.username} /> {/* Pass token and username */}
+      <Logout />
       {error && <p>{error}</p>}
       {userData && (
         <div>
@@ -58,5 +60,5 @@ export default function Profile({ token }) {
   );
 }
 Profile.propTypes = {
-  token: PropTypes.string.isRequired,
+  token: PropTypes.string,
 };

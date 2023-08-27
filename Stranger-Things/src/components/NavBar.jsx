@@ -2,7 +2,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-
 const Navbar = ({ token, handleLogOut }) => {
   return (
     <div id="navbar">
@@ -26,7 +25,9 @@ const Navbar = ({ token, handleLogOut }) => {
                 </Link>
               </li>
               <li>
+              <Link to="logout" className="logoutLink">
                 <button onClick={handleLogOut}>Log Out</button>
+                </Link>
               </li>
             </>
           ) : (
@@ -49,8 +50,8 @@ const Navbar = ({ token, handleLogOut }) => {
   );
 };
 Navbar.propTypes = {
-  token: PropTypes.string.isRequired,
-  handleLogOut: PropTypes.func.isRequired,
+  token: PropTypes.string,
+  handleLogOut: PropTypes.func,
   };
 
 export default Navbar;
