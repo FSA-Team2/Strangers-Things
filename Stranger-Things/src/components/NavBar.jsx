@@ -1,5 +1,5 @@
 //NavBar.jsx
-
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
@@ -48,5 +48,9 @@ const Navbar = ({ token, handleLogOut }) => {
     </div>
   );
 };
+Navbar.propTypes = {
+  token: PropTypes.string.isRequired,
+  handleLogOut: PropTypes.func.isRequired,
+  };
 
 export default Navbar;

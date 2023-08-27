@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { createNewPost } from "../API-Source/API"; 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import "./CreatePost.css";
 
 export default function CreatePost({ token }) {
   const navigate = useNavigate();
@@ -55,6 +56,11 @@ export default function CreatePost({ token }) {
         </label>
         <button type="submit">Create Post</button>
       </form>
+      <Link to="/" className="returnButton">
+        <button className="goBack" onClick={() => navigate("/profile")}>
+          Return
+        </button>
+      </Link>
     </div>
   );
 }

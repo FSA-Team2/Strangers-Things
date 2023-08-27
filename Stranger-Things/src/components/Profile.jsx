@@ -1,6 +1,6 @@
 //Profile.jsx
-
-import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
@@ -57,3 +57,6 @@ export default function Profile({ token }) {
     </div>
   );
 }
+Profile.propTypes = {
+  token: PropTypes.string.isRequired,
+};
