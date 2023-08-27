@@ -11,6 +11,8 @@ import SignUpForm from "./Register";
 import Authenticate from "./Authenticate";
 import CreatePost from "./CreatePost";
 import "./RoutesPaths.css";
+import Logout from "./Logout";
+import { Messages } from "./Messages";
 
 const RoutePaths = () => {
   const [token, setToken] = useState(null);
@@ -25,6 +27,8 @@ const RoutePaths = () => {
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/register" element={<SignUpForm setToken={setToken} />} />
         <Route path="/authenticate" element={<Authenticate token={token} />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/messages" element={<Messages />} />
         <Route
           path="/create-post"
           element={token ? <CreatePost token={token} /> : <Navigate to="/login" />}
