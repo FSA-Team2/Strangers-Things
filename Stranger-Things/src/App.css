@@ -11,16 +11,16 @@
   align-content: center;
   justify-content: center;
   align-items: center;
-}
+} 
 
-div#container {
+/* div#container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   align-items: center;
-}
+} */ */
 
 .logo {
   height: 6em;

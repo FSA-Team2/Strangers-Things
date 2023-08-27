@@ -48,7 +48,7 @@ export default function SignUpForm({ setToken }) {
       const result = await response.json();
       if (response.ok) {
         setToken(result.data.token);
-        navigate("/login");
+        navigate("/profile");
       } else {
         setError(result.error.message);
       }

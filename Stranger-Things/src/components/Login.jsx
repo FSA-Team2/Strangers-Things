@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
-import { loginUser } from "../API-Source/API"; 
+import { loginUser } from "../API-Source/API";
 import "./Login.css";
 
 export default function Login({ setToken }) {
@@ -32,28 +32,40 @@ export default function Login({ setToken }) {
   }
 
   return (
-    <div id="login">
+    <div className="login-box">
       <h2>Login</h2>
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Username:{" "}
+        <div className="user-box">
+         
           <input
             type="text"
+            name=""
+            required=""
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-        </label>
-
-        <label>
-          Password:{" "}
+           <label>Username: </label>
+        </div>
+        <div className="user-box">
+          
           <input
             type="password"
+            name=""
+            required=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+          
           />
-        </label>
-        <button type="submit">Submit</button>
+          <label>Password: </label>
+        </div>
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <button type="submit">Submit</button>
+        </a>
       </form>
       <Link to="/" className="returnButton">
         <button className="goBack" onClick={() => navigate("/profile")}>
