@@ -1,26 +1,64 @@
-// import { Link, useHistory } from "react-router-dom";
+//Profile.jsx
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import { BASE_URL } from "../API-Source/API";
+import { useNavigate } from "react-router-dom";
+import Navbar from "./NavBar";
+import "./Profile.css";
+import Logout from "./Logout";
 
+export default function Profile({ token }) {
+  const navigate = useNavigate();
 
+  const [userData, setUserData] = useState(null);
+  const [error, setError] = useState(null);
 
-//GET/users/me in the herokuapp helper page. This route is used to grab an already logged in user's relevant data. Messages, etc. Must pass a valid token or it will be rejected.
+  useEffect(() => {
+    async function fetchUserData() {
+      if (!token) {
+        navigate("/login");
+        return;
+      }
 
-export default function Profile() {
+      try {
+        const response = await fetch(`${BASE_URL}/users/me`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        });
 
-  // const history = useHistory();
+        const result = await response.json();
+        if (response.ok) {
+          setUserData(result.data);
+        } else {
+          setError(result.error.message);
+        }
+      } catch (error) {
+        setError("Error fetching user data.");
+        console.error("Error fetching user data:", error);
+      }
+    }
 
-  //   history.push("/")
+    fetchUserData();
+  }, [token, navigate]);
 
-
-    return (
-      <div className="profile">
-        <h1>Profile</h1>
-
-        
-       
-        {/* <Link to="/" className="returnButton">
-          <button className="goBack">Return</button>
-          </Link> */}
-
-      </div>
-    );
-  }
+  return (
+    <div className="profile">
+      <h1>Profile</h1>
+      <Navbar token={token} username={userData?.username} /> {/* Pass token and username */}
+      <Logout />
+      {error && <p>{error}</p>}
+      {userData && (
+        <div>
+          <p>Username: {userData.username}</p>
+          {/* Display other user data fields here */}
+        </div>
+      )}
+    </div>
+  );
+}
+Profile.propTypes = {
+  token: PropTypes.string,
+};

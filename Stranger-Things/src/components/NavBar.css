@@ -1,0 +1,46 @@
+/* NavBar.css */
+
+#navbar {
+    background-color: #535bf2;
+    color: white;
+    padding: 10px 0;
+  }
+  
+  #navlinks {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #navUl {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  #navUl li {
+    font-weight: 500;
+  }
+  
+  #navUl a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.2s;
+  }
+  
+  #navUl a:hover {
+    color: #ff9900;
+  }
+  
+  #navUl button {
+    padding: 8px 15px;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  #navUl button:hover {
+    background-color: #ff6600;
+  }

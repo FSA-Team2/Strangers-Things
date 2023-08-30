@@ -1,5 +1,4 @@
-
-
+//Homepage should only have Nav tabs and welcome message
 import Navbar from "./NavBar";
 export const Home = () => {
   return (
@@ -13,5 +12,9 @@ export const Home = () => {
 };
 
 
+
 export default Home;
 
+        
+      
+  

@@ -1,0 +1,44 @@
+/* Authenticate.css */
+
+
+.authenticate {
+    margin: 20px;
+  }
+  
+  .authenticate h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .authenticate p {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .authenticate .error {
+    color: red;
+  }
+  
+  .authenticate .success {
+    color: green;
+  }
+  
+  .authenticateButton {
+    border: none;
+    background-color: #646cff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .authenticateButton:hover {
+    background-color: #535bf2;
+  }
+  
+  /* Additional styles for button interaction */
+  .authenticate .button-container {
+    margin-top: 20px;
+  }

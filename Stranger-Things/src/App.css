@@ -1,3 +1,5 @@
+/* app.css */
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -9,18 +11,16 @@
   align-content: center;
   justify-content: center;
   align-items: center;
+} 
 
-}
-
-div#container {
+/* div#container {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-content: center;
   justify-content: center;
   align-items: center;
-
-}
+} */ */
 
 .logo {
   height: 6em;
@@ -34,12 +34,6 @@ div#container {
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
-
-
-
-
-
-
 
 @keyframes logo-spin {
   from {
@@ -59,8 +53,13 @@ div#container {
 .card {
   padding: 2em;
   border: solid 8px black;
+  background-color: white;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .read-the-docs {
   color: #888;
+  font-style: italic;
 }

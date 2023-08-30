@@ -1,84 +1,81 @@
+//Login.jsx
+
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
+import { loginUser } from "../API-Source/API";
+import "./Login.css";
 
-const COHORT_NAME = "2302-ACC-PT-WEB-PT-A";
-const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}`;
 export default function Login({ setToken }) {
-  const [username, setUsername] = useState(""); 
-  const [password, setPassword] = useState(""); 
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
-  
+
   const navigate = useNavigate();
-  
+
   async function handleSubmit(event) {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${BASE_URL}/users/login`, {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          user: {
-            username,
-            password 
-            }
-        }) 
-      });
-      const result = await response.json();
-      
-      if (response.ok) {
+      const result = await loginUser(username, password);
+
+      if (result.success) {
         setToken(result.data.token);
         navigate("/profile");
       } else {
         setError(result.error.message);
       }
     } catch (error) {
-      console.error(error);
+      setError("Error logging in.");
+      console.error("Error logging in:", error);
     }
   }
-        
 
   return (
- <>
-      <div id="login">
-        <h2>Login</h2>
-        {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
-          <label>
-            Username:{" "}
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-          </label>
-
-          <label>
-            Password:{" "}
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
+    <div className="login-box">
+      <h2>Login</h2>
+      {error && <p>{error}</p>}
+      <form onSubmit={handleSubmit}>
+        <div className="user-box">
+         
+          <input
+            type="text"
+            name=""
+            required=""
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+           <label>Username: </label>
+        </div>
+        <div className="user-box">
+          
+          <input
+            type="password"
+            name=""
+            required=""
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          
+          />
+          <label>Password: </label>
+        </div>
+        <a href="#">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
           <button type="submit">Submit</button>
-        </form>
-        <Link to="/" className="returnButton">
-          <button className="goBack" onClick={() => navigate("/profile")}>
-            Return
-          </button>
-        </Link>
-      </div>
-     
-      
-    </>
-    
+        </a>
+      </form>
+      <Link to="/" className="returnButton">
+        <button className="goBack" onClick={() => navigate("/profile")}>
+          Return
+        </button>
+      </Link>
+    </div>
   );
-  
 }
+
 Login.propTypes = {
   setToken: PropTypes.func.isRequired,
 };
