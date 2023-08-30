@@ -8,11 +8,13 @@
   .authenticate h2 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    display: none;
   }
   
   .authenticate p {
     font-size: 1.2rem;
     margin-bottom: 5px;
+    display: none;
   }
   
   .authenticate .error {
@@ -32,6 +34,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
+    display: none;
   }
   
   .authenticateButton:hover {

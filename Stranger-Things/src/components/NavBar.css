@@ -31,16 +31,3 @@
     color: #ff9900;
   }
   
-  #navUl button {
-    padding: 8px 15px;
-    background-color: #ff9900;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.2s;
-  }
-  
-  #navUl button:hover {
-    background-color: #ff6600;
-  }

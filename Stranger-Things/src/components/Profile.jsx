@@ -48,7 +48,7 @@ export default function Profile({ token }) {
     <div className="profile">
       <h1>Profile</h1>
       <Navbar token={token} username={userData?.username} /> {/* Pass token and username */}
-      <Logout />
+      <button style={{display: "none"}} id="logOut" onClick={Logout}>Log Out</button>
       {error && <p>{error}</p>}
       {userData && (
         <div>

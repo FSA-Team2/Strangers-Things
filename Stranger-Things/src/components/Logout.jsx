@@ -2,24 +2,20 @@ import Navbar from "./NavBar";
 import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 
-// Define the handleLogOut function
-const handleLogOut = (setToken, navigate) => {
-  setToken(null);
-  navigate("/login");
-};
-
-const Logout = ({ token, setToken }) => {
+const Logout = ({ setToken, token }) => {
   const navigate = useNavigate();
 
   const handleLogOutClick = () => {
-    handleLogOut(setToken, navigate);
+    setToken(null);
+    navigate("/login");
   };
 
   return (
     <div className="Logout">
-      <Navbar token={token} handleLogOut={handleLogOutClick} />
+      <Navbar token={token}
+      handleLogOut={handleLogOutClick} />
 
-      <button onClick={handleLogOutClick}>Log Out</button>
+      <button id="logOut" onClick={handleLogOutClick}>Log Out</button>
     </div>
   );
 };
@@ -29,5 +25,7 @@ Logout.propTypes = {
   token: PropTypes.string,
 };
 
-
 export default Logout;
+
+
+
