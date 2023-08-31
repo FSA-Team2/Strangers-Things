@@ -13,6 +13,7 @@ import CreatePost from "./CreatePost";
 import "./RoutesPaths.css";
 import Logout from "./Logout";
 import { Messages } from "./Messages";
+import UserTabs from "./UserTabs";
 
 const RoutePaths = () => {
   const [token, setToken] = useState(null);
@@ -29,6 +30,8 @@ const RoutePaths = () => {
         <Route path="/authenticate" element={<Authenticate token={token} />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/messages" element={<Messages />} />
+        <Route path="/usertabs" element={<UserTabs />} />
+        
         <Route
           path="/create-post"
           element={token ? <CreatePost token={token} /> : <Navigate to="/login" />}

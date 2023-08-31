@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../API-Source/API";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./NavBar";
+// import Navbar from "./NavBar";
 import "./Profile.css";
 import Logout from "./Logout";
-import CreatePost from "./CreatePost";
+
+import UserTabs from "./UserTabs";
 
 export default function Profile({ token }) {
   const navigate = useNavigate();
@@ -47,14 +48,19 @@ export default function Profile({ token }) {
 
   return (
     <div className="profile">
-      <h1>Profile</h1>
-      <Navbar token={token} username={userData?.username} /> {/* Pass token and username */}
-      <button style={{display: "none"}} id="logOut" onClick={Logout}>Log Out</button>
+    <input style={{display: "none"}} />
+    {/* <Navbar token={token} username={userData?.username} /> Pass token and username */}
+    <button style={{display: "none"}} id="logOut" onClick={Logout}>Log Out</button>
+
+
+      <h1>Profile</h1>      
+      
       {error && <p>{error}</p>}
       {userData && (
         <div>
-          <p>Username: {userData.username}</p>
-          <CreatePost />
+          <p>{userData.username}</p>
+          
+          <UserTabs />
           {/* Display other user data fields here */}
         </div>
       )}

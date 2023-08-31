@@ -38,7 +38,7 @@ export default function Login({ setToken }) {
       <form onSubmit={handleSubmit}>
         <div className="user-box">
          
-          <input
+          <input 
             type="text"
             name=""
             required=""
@@ -49,7 +49,7 @@ export default function Login({ setToken }) {
         </div>
         <div className="user-box">
           
-          <input
+          <input 
             type="password"
             name=""
             required=""

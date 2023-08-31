@@ -66,5 +66,5 @@ export default function CreatePost({ token }) {
 }
 
 CreatePost.propTypes = {
-  token: PropTypes.string.isRequired,
+  token: PropTypes.string,
 };

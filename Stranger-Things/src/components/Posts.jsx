@@ -14,6 +14,7 @@ export default function Posts() {
       try {
         const responseData = await fetchPosts();
         if (responseData) {
+          console.log(responseData);
           setUserPosts(responseData);
         }
       } catch (error) {
@@ -23,9 +24,9 @@ export default function Posts() {
     fetchPostsData();
   }, []);
 
-  const handleCreatePost = () => {
-    navigate("/create-post");
-  };
+  // const handleCreatePost = () => {
+  //   navigate("/create-post");
+  // };
 
   return (
     <div className="posts">
@@ -40,9 +41,9 @@ export default function Posts() {
             <p>Will Deliver: {post.willDeliver ? "Yes" : "No"}</p>
           </div>
         ))}
-        <button className="createPostButton" onClick={handleCreatePost}>
+        {/* <button className="createPostButton" onClick={handleCreatePost}>
           Create New Post
-        </button>
+        </button> */}
         <Link to="/" className="returnButton">
           <button className="goBack" onClick={() => navigate("/")}>
             Return
@@ -51,4 +52,5 @@ export default function Posts() {
       </div>
     </div>
   );
-}
+      }
+// }
