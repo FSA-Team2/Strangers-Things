@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "./NavBar";
 import "./Profile.css";
 import Logout from "./Logout";
+import CreatePost from "./CreatePost";
 
 export default function Profile({ token }) {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ export default function Profile({ token }) {
       {userData && (
         <div>
           <p>Username: {userData.username}</p>
+          <CreatePost />
           {/* Display other user data fields here */}
         </div>
       )}
