@@ -3,6 +3,7 @@ import { BASE_URL } from "../API-Source/API";
 import "./Messages.css";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
+
 export default function Messages({ conversationId, token }) {
   const [data, setData] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -52,17 +53,9 @@ export default function Messages({ conversationId, token }) {
   };
 
   return (
-    <div>
+    <div className="form_group">
       <h2>New Message:</h2>
-      <form onSubmit={handleSendMessage}>
-        <label>
-          Message:
-          <input
-            type="text"
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-          />
-        </label>
+      <form className="formMessage" onSubmit={handleSendMessage}>
         <label>
           Post:
           <input
@@ -71,30 +64,47 @@ export default function Messages({ conversationId, token }) {
             onChange={(e) => setPost(e.target.value)}
           />
         </label>
-        <label>
+        <br></br>
+        <label className="form_label">
           From:
           <input
+            className="form_input"
             type="text"
             value={fromUser}
             onChange={(e) => setFromUser(e.target.value)}
           />
         </label>
-        <label>
+        <br></br>
+        <label className="form_label">
           When:
           <input
+            className="form_input"
             type="text"
             value={createdAt}
             onChange={(e) => setCreatedAt(e.target.value)}
           />
         </label>
-        <label>
+        <br></br>
+        <label className="form_label">
           Update:
           <input
+            className="form_input"
             type="text"
             value={updatedAt}
             onChange={(e) => setCreatedAt(e.target.value)}
           />
         </label>
+        <br></br>
+        <label className="form_label">
+          Message:
+          <input
+            className="form_input_mess"
+            type="text"
+            value={newMessage}
+            onChange={(e) => setNewMessage(e.target.value)}
+          />
+        </label>
+
         <button type="submit">Send</button>
       </form>
 
