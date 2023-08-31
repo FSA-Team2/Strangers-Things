@@ -12,7 +12,7 @@ import Authenticate from "./Authenticate";
 import CreatePost from "./CreatePost";
 import "./RoutesPaths.css";
 import Logout from "./Logout";
-import { Messages } from "./Messages";
+import Messages from "./Messages";
 import UserTabs from "./UserTabs";
 
 const RoutePaths = () => {

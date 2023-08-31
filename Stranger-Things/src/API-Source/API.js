@@ -55,28 +55,28 @@ export async function fetchUsers(token) {
 }
 
 // Send a message
-export async function sendMessage(conversationId, messageText, token) {
-  try {
-    const response = await fetch(`${BASE_URL}/messages`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({
-        message: {
-          content: messageText,
-          conversationId: conversationId,
-        },
-      }),
-    });
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-}
+// export async function sendMessage(conversationId, messageText, token) {
+//   try {
+//     const response = await fetch(`${BASE_URL}/messages`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//       body: JSON.stringify({
+//         message: {
+//           content: messageText,
+//           conversationId: conversationId,
+//         },
+//       }),
+//     });
+//     const result = await response.json();
+//     return result;
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// }
 
 // Test the API
 export async function testApi() {
