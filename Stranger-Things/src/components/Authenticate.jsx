@@ -18,10 +18,13 @@ export default function Authenticate({ token }) {
         headers["Authorization"] = `Bearer ${token.trim()}`;
       }
 
-      const response = await fetch('https://fsa-jwt-practice.herokuapp.com/authenticate', {
-        method: "GET",
-        headers: headers,
-      });
+      const response = await fetch(
+        "https://fsa-jwt-practice.herokuapp.com/authenticate",
+        {
+          method: "GET",
+          headers: headers,
+        }
+      );
 
       const result = await response.json();
       console.log(result);
@@ -34,7 +37,6 @@ export default function Authenticate({ token }) {
 
   return (
     <div>
-    {/* //   <h2>Authenticate!</h2> */}
       {successMessage && <p>{successMessage}</p>}
       {error && <p>{error}</p>}
       <button className="authenticateButton" onClick={handleClick}>

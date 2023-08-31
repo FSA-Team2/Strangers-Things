@@ -1,7 +1,7 @@
 //RoutesPath.jsx
 
 import { useState } from "react";
-import { Routes, Route, Navigate } from "react-router-dom"; 
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./HomePage";
 import Posts from "./Posts";
 import Profile from "./Profile";
@@ -31,10 +31,12 @@ const RoutePaths = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/usertabs" element={<UserTabs />} />
-        
+
         <Route
           path="/create-post"
-          element={token ? <CreatePost token={token} /> : <Navigate to="/login" />}
+          element={
+            token ? <CreatePost token={token} /> : <Navigate to="/login" />
+          }
         />
       </Routes>
     </div>

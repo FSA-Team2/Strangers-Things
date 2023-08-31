@@ -24,10 +24,6 @@ export default function Posts() {
     fetchPostsData();
   }, []);
 
-  // const handleCreatePost = () => {
-  //   navigate("/create-post");
-  // };
-
   return (
     <div className="posts">
       <h1>Posts</h1>
@@ -41,9 +37,7 @@ export default function Posts() {
             <p>Will Deliver: {post.willDeliver ? "Yes" : "No"}</p>
           </div>
         ))}
-        {/* <button className="createPostButton" onClick={handleCreatePost}>
-          Create New Post
-        </button> */}
+
         <Link to="/" className="returnButton">
           <button className="goBack" onClick={() => navigate("/")}>
             Return
@@ -52,5 +46,4 @@ export default function Posts() {
       </div>
     </div>
   );
-      }
-// }
+}

@@ -12,10 +12,11 @@ const Logout = ({ setToken, token }) => {
 
   return (
     <div className="Logout">
-      <Navbar token={token}
-      handleLogOut={handleLogOutClick} />
+      <Navbar token={token} handleLogOut={handleLogOutClick} />
 
-      <button id="logOut" onClick={handleLogOutClick}>Log Out</button>
+      <button id="logOut" onClick={handleLogOutClick}>
+        Log Out
+      </button>
     </div>
   );
 };
@@ -26,6 +27,3 @@ Logout.propTypes = {
 };
 
 export default Logout;
-
-
-

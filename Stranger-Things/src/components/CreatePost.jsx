@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { createNewPost } from "../API-Source/API"; 
+import { createNewPost } from "../API-Source/API";
 import { Link, useNavigate } from "react-router-dom";
 import "./CreatePost.css";
 
@@ -22,9 +22,8 @@ export default function CreatePost({ token }) {
     };
 
     try {
-      const result = await createNewPost(postDetails, token); 
+      const result = await createNewPost(postDetails, token);
       console.log(result);
-
     } catch (error) {
       console.error("Error creating post:", error);
     }
@@ -36,15 +35,26 @@ export default function CreatePost({ token }) {
       <form onSubmit={handleSubmit}>
         <label>
           Title:
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
         </label>
         <label>
           Description:
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} />
+          <textarea
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
         </label>
         <label>
           Price:
-          <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
+          <input
+            type="text"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
         </label>
         <label>
           Will Deliver:

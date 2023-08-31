@@ -37,25 +37,22 @@ export default function Login({ setToken }) {
       {error && <p>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="user-box">
-         
-          <input 
+          <input
             type="text"
             name=""
             required=""
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-           <label>Username: </label>
+          <label>Username: </label>
         </div>
         <div className="user-box">
-          
-          <input 
+          <input
             type="password"
             name=""
             required=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          
           />
           <label>Password: </label>
         </div>

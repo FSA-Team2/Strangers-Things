@@ -48,18 +48,19 @@ export default function Profile({ token }) {
 
   return (
     <div className="profile">
-    <input style={{display: "none"}} />
-    {/* <Navbar token={token} username={userData?.username} /> Pass token and username */}
-    <button style={{display: "none"}} id="logOut" onClick={Logout}>Log Out</button>
+      <input style={{ display: "none" }} />
+      {/* <Navbar token={token} username={userData?.username} /> Pass token and username */}
+      <button style={{ display: "none" }} id="logOut" onClick={Logout}>
+        Log Out
+      </button>
 
+      <h1>Profile</h1>
 
-      <h1>Profile</h1>      
-      
       {error && <p>{error}</p>}
       {userData && (
         <div>
           <p>{userData.username}</p>
-          
+
           <UserTabs />
           {/* Display other user data fields here */}
         </div>
