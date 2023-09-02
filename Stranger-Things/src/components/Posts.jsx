@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { fetchPosts } from "../API-Source/API";
 import { Link, useNavigate } from "react-router-dom";
 import "./Posts.css";
-
+import SearchBar from "./SearchBar";
 export default function Posts() {
   const [userPosts, setUserPosts] = useState([]);
   const navigate = useNavigate();
@@ -27,14 +27,15 @@ export default function Posts() {
   return (
     <div className="posts">
       <h1>Posts</h1>
+      <SearchBar />
       <div>
         {userPosts.map((post) => (
           <div key={post._id} className="eachPost">
-            <p>Title: {post.title}</p>
-            <p>Description: {post.description}</p>
-            <p>Price: {post.price}</p>
-            <p>Location: {post.location}</p>
-            <p>Will Deliver: {post.willDeliver ? "Yes" : "No"}</p>
+            <p className="postP">Title: {post.title}</p>
+            <p className="postP">Description: {post.description}</p>
+            <p className="postP">Price: {post.price}</p>
+            <p className="postP">Location: {post.location}</p>
+            <p className="postP">Will Deliver: {post.willDeliver ? "Yes" : "No"}</p>
           </div>
         ))}
 

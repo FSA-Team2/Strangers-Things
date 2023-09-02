@@ -28,7 +28,10 @@ div.userTabs {
       -webkit-tap-highlight-color: transparent;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
-     display: flex;
+  }
+  
+  body {
+    display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;

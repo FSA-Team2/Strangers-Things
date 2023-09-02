@@ -14,6 +14,7 @@ import "./RoutesPaths.css";
 import Logout from "./Logout";
 import Messages from "./Messages";
 import UserTabs from "./UserTabs";
+import SearchBar from "./SearchBar";
 
 const RoutePaths = () => {
   const [token, setToken] = useState(null);
@@ -31,6 +32,7 @@ const RoutePaths = () => {
         <Route path="/logout" element={<Logout />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/usertabs" element={<UserTabs />} />
+        <Route path="/searchBar" element={<SearchBar />} />
 
         <Route
           path="/create-post"

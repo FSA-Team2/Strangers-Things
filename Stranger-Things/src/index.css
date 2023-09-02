@@ -17,6 +17,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: black;
 }
 
 a {
@@ -28,4 +29,8 @@ a {
 a:hover {
   text-decoration: underline;
   color: #000; 
+}
+
+#text {
+  color: black;
 }

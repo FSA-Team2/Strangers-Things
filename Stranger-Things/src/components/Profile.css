@@ -33,3 +33,9 @@
   .profile .navbar {
     margin-top: 20px;
   }
+
+  @media screen and (min-width: 600px) {
+.userTabs {
+  height: 900px;
+}
+  }
