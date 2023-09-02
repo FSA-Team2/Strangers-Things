@@ -119,8 +119,8 @@ export default function Messages({ conversationId, token }) {
           <p>Update: {message.updatedAt}</p>
         </div>
       ))}
-      <Link to="/" className="returnButton">
-        <button className="goBack" onClick={() => navigate("/")}>
+      <Link to="/" className="returnButtonMessages">
+        <button className="goBackMessages" onClick={() => navigate("/")}>
           Return
         </button>
       </Link>

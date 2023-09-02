@@ -66,3 +66,6 @@ form.formMessage {
     justify-content: center;
     align-items: center;
 }
+.returnButtonMessages {
+    rotate: 360deg;
+}
