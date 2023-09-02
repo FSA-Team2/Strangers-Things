@@ -1,6 +1,8 @@
 # Strangers-Things
 ## The home component is the landing page.
 
+# CAT
+
 # 💫 About Me:
 We are currently working on Stranger's Things. A project for our FullStack Development Class.<br>This Application features multiple navigations and different user views.
 
@@ -29,7 +31,7 @@ We are currently working on Stranger's Things. A project for our FullStack Devel
 
 <!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
 
-
+# MO
 
 # 💫 About Me:
 We are currently working on Stranger’s Things. A project for our FullStack Development Class.<br>This Project feature multiple forms, using JWT, filters, etc.
